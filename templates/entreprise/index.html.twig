@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EntrepriseController!{% endblock %}
+
+{% block body %}
+{# dump = vardump #}
+{# {{ dump(entreprises) }} #}
+<h1>Liste des entreprises</h1>
+<p>{% for entreprise in entreprises %}
+    {#le . remplace le -> ,et le ~ remplace le . pour concatiner #}
+    {# <li>{{ entreprise.raisonSociale ~ ' ('~ entreprise.ville ~ ')' }}</li> #}
+    <li><a href="{{ path('show_entreprise' , {'id':entreprise.id} ) }}">{{entreprise.raisonSociale}}</a></li>
+    {% endfor %}
+</p>
+{% endblock %}
