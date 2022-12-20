@@ -10,6 +10,7 @@
 <h3>adresse : {{entreprise.fullAdresse}}</h3>
 <br>
 <h2>Liste d'employés</h2>
+{% if entreprise.employes |length > 0 %}
 {% for employe in entreprise.employes %}
 <h3>
     <li>
@@ -17,4 +18,8 @@
     </li>
 </h3>
 {% endfor %}
+{% else %}
+il n'ya aucun employé enregistré pour cette entreprise
+{% endif %}
+
 {% endblock %}
