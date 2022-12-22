@@ -7,7 +7,8 @@
 <h3>ville : {{employe.ville}}</h3>
 <h3>Date de naissance : {{employe.dateNaissance|date("m/d/Y")}} ({{employe.age()}} ans)</h3>
 
-<h3>Entreprise : {{employe.entreprise.raisonSociale}}</h3>
+<h3>Entreprise : <a href="{{ path('show_entreprise',{id:employe.entreprise.id}) }}"> {{employe.entreprise.raisonSociale}}</a>
+</h3>
 <h3>date d'embauche : {{employe.dateEmbauche|date('m/d/Y')}}</h3>
 
 <h3></h3>
